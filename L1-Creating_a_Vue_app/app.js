@@ -15,8 +15,9 @@ const app = Vue.createApp({
   },
   // functions
   methods: {
-    changeTitle() {
-      this.title = "El pepe";
+    changeTitle(title) {
+      // this references the component itself
+      this.title = title;
     },
   },
   //template: "<h2>I am the template</h2>",
