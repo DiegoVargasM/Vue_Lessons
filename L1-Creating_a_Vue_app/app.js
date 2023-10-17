@@ -14,6 +14,11 @@ const app = Vue.createApp({
     };
   },
   // functions
+  methods: {
+    changeTitle() {
+      this.title = "El pepe";
+    },
+  },
   //template: "<h2>I am the template</h2>",
 });
 
