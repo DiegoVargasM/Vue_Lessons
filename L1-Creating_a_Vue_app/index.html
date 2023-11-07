@@ -43,6 +43,16 @@
         background: #ff9ed2;
         color: white;
       }
+
+      button {
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+        background: #e6645b;
+        color: white;
+        cursor: pointer;
+        margin-right: 4px;
+      }
     </style>
   </head>
   <body>
@@ -53,6 +63,9 @@
       <a :href="url">My LinkedIn</a>
 
       <h1>Your age is: {{age}}</h1>
+      <button v-on:click="age++">Increase age</button>
+      <button @click="age--">Decrease age</button>
+
       <div v-if="showBooks">
         <ul>
           <li v-for="book in books" :class="{fav: book.isFav}">
@@ -63,10 +76,7 @@
         </ul>
       </div>
 
-      <button v-on:click="age++">Increase age</button>
-      <button @click="age--">Decrease age</button>
-
-      <button @click="changeTitle('El juancho')">Change title</button>
+      <!-- <button @click="changeTitle('El juancho')">Change title</button> -->
 
       <button @click="toggleShowBooks">
         <span v-if="showBooks">Hide Books</span>
