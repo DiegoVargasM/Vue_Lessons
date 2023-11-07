@@ -58,6 +58,11 @@ const app = Vue.createApp({
       book.isFav = !book.isFav;
     },
   },
+  computed: {
+    filteredBooks() {
+      return this.books.filter((book) => book.isFav);
+    },
+  },
   //template: "<h2>I am the template</h2>",
 });
 
