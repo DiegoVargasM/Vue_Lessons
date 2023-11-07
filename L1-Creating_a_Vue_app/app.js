@@ -8,6 +8,7 @@ const app = Vue.createApp({
   // data function
   data() {
     return {
+      url: "https://www.linkedin.com/in/diegovarm/",
       showBooks: true,
       books: [
         { title: "Name of the Wind", author: "Patrick Rothfuss" },
