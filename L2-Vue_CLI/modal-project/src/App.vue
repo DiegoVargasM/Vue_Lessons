@@ -1,6 +1,8 @@
 <template>
   <h1>{{title}}</h1>
   <br/>
+  <p>Lasagna con camaroni</p>
+  <br/>
   <!-- Temp refs example -->
   <input type="text" ref="name">
   <br/>
