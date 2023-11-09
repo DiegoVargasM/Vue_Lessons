@@ -1,6 +1,6 @@
 <template>
-	<div class="backdrop" ref="backdrop">
-		<div class="modal" :class="{sale: theme === 'sale'}" @click="closeModal" ref="modal">
+	<div class="backdrop" @click="closeModal" ref="backdrop">
+		<div class="modal" :class="{sale: theme === 'sale'}" ref="modal">
 			<h1>{{header}}</h1>
 			<p>{{text}}</p>
 		</div>
@@ -10,13 +10,12 @@
 <script>
 export default {
 	name: 'Modal',
+	props: ['header', 'text', 'theme'],
 	methods: {
 		closeModal() {
-			this.$refs.modal.style.display = 'none'
-			this.$refs.backdrop.style.display = 'none'
+			this.$emit('close')
 		}
-	},
-	props: ['header', 'text', 'theme']
+	}
 }
 </script>
 

@@ -9,7 +9,10 @@
   <button @click="handleClick">Click me</button>
 
   <!-- Modal -->
-  <Modal :header="header" :text="text" theme="sale"/>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal"/>
+  </div>
+  <button @click="toggleModal">Open Modal</button>
 </template>
 
 <script>
@@ -25,7 +28,8 @@ export default {
     return {
       title: 'My first Vue App',
       header: 'Sign up for the Giveaway!',
-      text: 'Grab your comfy clothes for half the price.'
+      text: 'Grab your comfy clothes for half the price.',
+      showModal: false,
     }
   },
   methods: {
@@ -34,6 +38,9 @@ export default {
       console.log(this.$refs.name.value)
       this.$refs.name.classList.add('active')
       this.$refs.name.focus()
+    },
+    toggleModal() {
+      this.showModal = !this.showModal
     }
   }
 }
