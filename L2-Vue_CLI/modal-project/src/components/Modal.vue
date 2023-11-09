@@ -1,8 +1,8 @@
 <template>
 	<div class="backdrop" ref="backdrop">
-		<div class="modal" @click="closeModal" ref="modal">
-			<h1>Modal Title</h1>
-			<p>Modal Content</p>
+		<div class="modal" :class="{sale: theme === 'sale'}" @click="closeModal" ref="modal">
+			<h1>{{header}}</h1>
+			<p>{{text}}</p>
 		</div>
 	</div>
 </template>
@@ -15,7 +15,8 @@ export default {
 			this.$refs.modal.style.display = 'none'
 			this.$refs.backdrop.style.display = 'none'
 		}
-	}
+	},
+	props: ['header', 'text', 'theme']
 }
 </script>
 
@@ -45,5 +46,14 @@ export default {
 
 	.modal p {
 		font-style: normal;
+	}
+
+	.modal.sale {
+		background: crimson;
+		color: white
+	}
+
+	.modal.sale h1 {
+		color: white;
 	}
 </style>

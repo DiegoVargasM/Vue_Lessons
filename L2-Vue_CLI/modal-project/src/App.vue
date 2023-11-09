@@ -9,7 +9,7 @@
   <button @click="handleClick">Click me</button>
 
   <!-- Modal -->
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale"/>
 </template>
 
 <script>
@@ -23,7 +23,9 @@ export default {
   },
   data() {
     return {
-      title: 'My first Vue App'
+      title: 'My first Vue App',
+      header: 'Sign up for the Giveaway!',
+      text: 'Grab your comfy clothes for half the price.'
     }
   },
   methods: {
