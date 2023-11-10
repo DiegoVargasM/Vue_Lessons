@@ -9,7 +9,7 @@
   <button @click="handleClick">Click me</button>
 
   <!-- Modal -->
-  <div v-if="showModal">
+  <teleport to="#modals" v-if="showModal">
     <Modal theme="sale" @close="toggleModal">
       <template v-slot:links>
         <a href="#">Sign up</a>
@@ -18,14 +18,14 @@
       <h1>Sign un for the Giveaway</h1>
       <p>Grab your comfy clothes for half the price.</p>
     </Modal>
-  </div>
+  </teleport>
   <!-- Second Modal -->
-  <div v-if="showSecondModal">
+  <teleport to="#modals" v-if="showSecondModal">
     <Modal @close="toggleSecondModal">
       <p>Original Price $399.99</p>
       <p>Now only $199.99</p>
     </Modal>
-  </div>
+  </teleport>
   <!-- Modal btns -->
   <button @click.alt="toggleModal">Open Modal (Hold alt)</button>
   <button @click="toggleSecondModal">Open Prices</button>
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
