@@ -14,6 +14,9 @@
 
     <label>Skills:</label>
     <input type="text" v-model="tempSkill" @keyup="addSkill" />
+    <div v-for="skill in skills" :key="skill" class="pill">
+      {{ skill }}
+    </div>
 
     <div class="terms">
       <input type="checkbox" required v-model="terms" />
@@ -25,8 +28,6 @@
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms: {{ terms }}</p>
-  <p>Temp Skill: {{ tempSkill }}</p>
-  <p>Skills: {{ skills }}</p>
 </template>
 
 <script>
