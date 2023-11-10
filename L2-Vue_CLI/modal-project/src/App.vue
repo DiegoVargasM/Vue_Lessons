@@ -19,13 +19,15 @@
       <p>Grab your comfy clothes for half the price.</p>
     </Modal>
   </div>
-  <button @click.alt="toggleModal">Open Modal (Hold alt)</button>
+  <!-- Second Modal -->
   <div v-if="showSecondModal">
     <Modal @close="toggleSecondModal">
       <p>Original Price $399.99</p>
       <p>Now only $199.99</p>
     </Modal>
   </div>
+  <!-- Modal btns -->
+  <button @click.alt="toggleModal">Open Modal (Hold alt)</button>
   <button @click="toggleSecondModal">Open Prices</button>
   <br/>
 </template>
