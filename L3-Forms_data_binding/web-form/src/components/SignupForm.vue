@@ -14,7 +14,7 @@
 
     <label>Skills: (alt + ,) to add a new skill</label>
     <input type="text" v-model="tempSkill" @keyup.alt="addSkill" />
-    <div v-for="skill in skills" :key="skill" class="pill">
+    <div v-for="skill in skills" :key="skill" class="pill" @click="deleteSkill">
       {{ skill }}
     </div>
 
@@ -28,6 +28,7 @@
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms: {{ terms }}</p>
+  <p>Skills: {{ skills }}</p>
 </template>
 
 <script>
@@ -50,6 +51,11 @@ export default {
         }
         this.tempSkill = "";
       }
+    },
+    deleteSkill(e) {
+      const skill = e.target.innerText;
+      const index = this.skills.indexOf(skill);
+      this.skills.splice(index, 1);
     },
   },
 };
