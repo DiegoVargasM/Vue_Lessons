@@ -12,8 +12,8 @@
       <option value="designer">Web Designer</option>
     </select>
 
-    <label>Skills:</label>
-    <input type="text" v-model="tempSkill" @keyup="addSkill" />
+    <label>Skills: (alt + ,) to add a new skill</label>
+    <input type="text" v-model="tempSkill" @keyup.alt="addSkill" />
     <div v-for="skill in skills" :key="skill" class="pill">
       {{ skill }}
     </div>
