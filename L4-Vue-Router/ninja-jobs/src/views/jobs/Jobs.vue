@@ -19,7 +19,8 @@ export default {
       // we need to convert the response to json
       .then((res) => res.json())
       // we populate the jobs array with the data
-      .then((data) => (this.jobs = data));
+      .then((data) => (this.jobs = data))
+      .catch((err) => console.log(err.message));
   },
 };
 </script>
