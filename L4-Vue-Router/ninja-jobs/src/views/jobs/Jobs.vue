@@ -11,12 +11,15 @@
 export default {
   data() {
     return {
-      jobs: [
-        { title: "Ninja UX Designer", id: 1, details: "lorem" },
-        { title: "Ninja Web Designer", id: 2, details: "lorem" },
-        { title: "Ninja Vue Designer", id: 3, details: "lorem" },
-      ],
+      jobs: [],
     };
+  },
+  mounted() {
+    fetch("http://localhost:3000/jobs")
+      // we need to convert the response to json
+      .then((res) => res.json())
+      // we populate the jobs array with the data
+      .then((data) => (this.jobs = data));
   },
 };
 </script>
