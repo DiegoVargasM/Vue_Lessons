@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    Home
-    <!-- Second, we assign the ref property  -->
+    <h1>Home</h1>
     <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
     <button @click="handleClick">Click me</button>
   </div>
@@ -15,16 +14,17 @@ export default {
   setup() {
     console.log("setup");
 
-    let name = "mario";
-    let age = 30;
+    // We can use ref to create reactive variables
+    // const means the reference object is constant, but the value can change
+    const name = ref("mario");
+    const age = ref(30);
 
-    // First, we need to create a reference to the element we want to target
     const p = ref(null);
 
+    // We can change the value of the reference object and it will be reactive
     const handleClick = () => {
-      console.log(p, p.value);
-      p.value.classList.add("test");
-      p.value.textContent = "Hello, ninjas";
+      name.value = "luigi";
+      age.value = 35;
     };
 
     return { name, age, handleClick, p };
