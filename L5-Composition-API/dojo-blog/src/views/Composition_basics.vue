@@ -12,7 +12,7 @@
 import { ref } from "vue";
 
 export default {
-  name: "Home",
+  name: "CompositionBasics",
   setup() {
     console.log("setup");
 
