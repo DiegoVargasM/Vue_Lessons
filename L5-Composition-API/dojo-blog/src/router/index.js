@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import Home2 from "../views/Home2.vue";
+import CompositionBasics from "../views/Composition_basics.vue";
+import RefVsReactive from "../views/RefVsReactive.vue";
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: Home,
+    path: "/1",
+    name: "CompositionBasics",
+    component: CompositionBasics,
   },
   {
-    path: "/home2",
-    name: "home2",
-    component: Home2,
+    path: "/2",
+    name: "RefVsReactive",
+    component: RefVsReactive,
   },
 ];
 
