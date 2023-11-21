@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <h1>Computed Values</h1>
-    <div v-for="name in names" :key="name">
+    <input type="text" v-model="search" />
+    <p>search term: {{ search }}</p>
+    <div v-for="name in matchingNames" :key="name">
       {{ name }}
     </div>
   </div>
@@ -13,11 +15,14 @@ import { ref, computed } from "vue";
 export default {
   name: "ComputedValues",
   setup() {
+    const search = ref("");
     const names = ref(["mario", "yoshi", "luigi", "toad", "bowser", "koopa", "peach"]);
 
-    const name = computed(() => {});
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value));
+    });
 
-    return { names };
+    return { names, search, matchingNames };
   },
 };
 </script>
