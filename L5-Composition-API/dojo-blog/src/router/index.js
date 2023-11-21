@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import CompositionBasics from "../views/Composition_basics.vue";
 import RefVsReactive from "../views/RefVsReactive.vue";
+import ComputedValues from "../views/ComputedValues.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/2",
     name: "RefVsReactive",
     component: RefVsReactive,
+  },
+  {
+    path: "/3",
+    name: "ComputedValues",
+    component: ComputedValues,
   },
 ];
 
