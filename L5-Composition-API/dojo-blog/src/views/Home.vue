@@ -2,8 +2,9 @@
   <div class="home">
     <h1>Home</h1>
     <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
-    <button @click="handleClick">Click me</button>
+    <button @click="handleClick">Luigi is 35</button>
     <input type="text" v-model="name" />
+    <button @click="age++">Increase age</button>
   </div>
 </template>
 
