@@ -3,6 +3,7 @@
     <h1>Welcome to the Home page!</h1>
     <PostList v-if="showPosts" :posts="posts" />
     <button @click="showPosts = !showPosts">Toggle posts</button>
+    <button @click="posts.pop()">Delete a post</button>
   </div>
 </template>
 
