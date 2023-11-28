@@ -3,6 +3,7 @@ import CompositionBasics from "../theory/Composition_basics.vue";
 import RefVsReactive from "../theory/RefVsReactive.vue";
 import ComputedValues from "../theory/ComputedValues.vue";
 import Home from "../views/Home.vue";
+import Details from "../views/Details.vue";
 
 const routes = [
   {
@@ -24,6 +25,12 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/posts/:id",
+    name: "Details",
+    component: Details,
+    props: true,
   },
 ];
 
