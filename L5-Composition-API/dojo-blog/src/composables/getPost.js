@@ -18,3 +18,5 @@ const getPost = (id) => {
 
   return { post, error, load };
 };
+
+export default getPost;
