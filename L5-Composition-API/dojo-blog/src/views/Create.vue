@@ -41,11 +41,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background: rgb(68, 66, 66);
-  color: rgba(255, 255, 255, 0.849);
-  font-family: sans-serif;
-}
 form {
   max-width: 480px;
   margin: 0 auto;
