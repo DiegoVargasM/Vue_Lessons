@@ -8,7 +8,7 @@ const getPost = (id) => {
     try {
       let data = await fetch("http://localhost:3000/posts/" + id);
       if (!data.ok) {
-        throw Error("No data available");
+        throw Error("Post does not exist");
       }
       post.value = await data.json();
     } catch (err) {
