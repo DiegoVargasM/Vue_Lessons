@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import CompositionBasics from "../views/Composition_basics.vue";
-import RefVsReactive from "../views/RefVsReactive.vue";
-import ComputedValues from "../views/ComputedValues.vue";
+import CompositionBasics from "../theory/Composition_basics.vue";
+import RefVsReactive from "../theory/RefVsReactive.vue";
+import ComputedValues from "../theory/ComputedValues.vue";
 import Home from "../views/Home.vue";
 
 const routes = [
