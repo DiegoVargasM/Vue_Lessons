@@ -21,6 +21,7 @@
 import { ref } from "vue";
 
 export default {
+  name: "Create",
   setup() {
     const title = ref("");
     const body = ref("");
