@@ -14,4 +14,26 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+header h1 {
+  color: #ff8800;
+  font-size: 48px;
+}
+header a {
+  color: #727272;
+  text-decoration: none;
+  margin-left: 20px;
+}
+header a.router-link-active {
+  color: #ff8800;
+  font-weight: 900;
+}
+</style>
