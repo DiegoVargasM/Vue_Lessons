@@ -21,3 +21,5 @@ const useTags = (posts) => {
 
   return { tags };
 };
+
+export default useTags;
