@@ -1,6 +1,12 @@
 <template>
   <div class="tag">
-    <h1>tags</h1>
+    <div v-if="error">{{ error }}</div>
+    <div v-else-if="posts.length">
+      <PostList :posts="tagPosts" />
+    </div>
+    <div v-else>
+      <Spinner />
+    </div>
   </div>
 </template>
 
@@ -9,10 +15,11 @@ import getPosts from "../composables/getPosts";
 import Spinner from "../components/Spinner.vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
+import PostList from "../components/PostList.vue";
 
 export default {
   name: "Tag",
-  components: { Spinner },
+  components: { Spinner, PostList },
   setup() {
     const { posts, error, load } = getPosts();
     load();
@@ -28,7 +35,7 @@ export default {
 
     console.log(tagPosts, "tagPosts");
 
-    return { posts, error };
+    return { posts, error, tagPosts };
   },
 };
 </script>
