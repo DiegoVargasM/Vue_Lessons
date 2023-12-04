@@ -48,6 +48,9 @@ export default {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(post),
       });
+      title.value = "";
+      body.value = "";
+      tags.value = [];
     };
 
     return { body, title, tags, tag, handleKeydown, handleSubmit };
@@ -55,7 +58,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 form {
   max-width: 480px;
   margin: 0 auto;
