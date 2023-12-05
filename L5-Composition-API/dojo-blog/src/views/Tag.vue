@@ -32,7 +32,7 @@ export default {
 
     //array of posts that have the tag
     const tagPosts = computed(() => {
-      return posts.value.filter((post) => post.tags.includes(tag));
+      return posts.value.filter((post) => post.tags.includes(route.params.tag));
     });
 
     console.log(tagPosts, "tagPosts");
